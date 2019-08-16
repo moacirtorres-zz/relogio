@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Relógio - Feito por Moacir Torres</title>
+	<link href="https://fonts.googleapis.com/css?family=Lexend+Deca&display=swap" rel="stylesheet">
+	<style type="text/css">
+		
+		body {
+			font-family: 'Lexend Deca', sans-serif;
+		}
+
+
+		#relogio {
+			font-size: 30px;
+			padding: 100px 50px 100px 50px;
+			align-items: center;
+			border: 3px solid black;
+			display:inline-block;
+			border-radius: 50%;
+			font-weight: 400;
+			background-color: #808080;
+			margin-top: 20px;
+			color: white;
+			
+
+		}
+
+		#brasilia {
+			text-align: center;
+			padding: 20px;
+			font-weight: 400px;
+			margin-top: 60px;
+
+
+		}
+
+		#moacir {
+			text-align: center;
+		}
+
+	</style>
+</head>
+<body onload="horario()">
+
+<div id="brasilia"> 
+<div>Horário de Brasília (UTF-3)</div>
+<div id="relogio">
+	
+
+</div>
+	
+</div>
+
+<div id="moacir">Feito por Moacir Torres</div>
+
+
+	<script type="text/javascript">
+		
+
+		function horario() {
+		var data = new Date();
+		
+
+		if (data.getHours()<10) {
+			var hora = "0" + data.getHours()
+		} else {
+			var hora = data.getHours()
+		}
+		if (data.getMinutes()<10) {
+			var minutos = "0" + data.getMinutes()
+		} else {
+			var minutos = data.getMinutes()
+		}
+				if (data.getSeconds()<10) {
+			var segundos = "0" + data.getSeconds()
+		} else {
+			var segundos = data.getSeconds()
+		}
+		
+		setTimeout("horario()",1000) 
+		
+
+
+		document.getElementById('relogio').innerHTML = (`${hora}: ${minutos} : ${segundos}`) 
+	}
+
+	</script>
+
+</body>
+</html>
